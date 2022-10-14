@@ -1,4 +1,4 @@
-package nl.hu.dp.ovchip.domein;
+package nl.hu.dp.ovchip.domain;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -14,7 +14,7 @@ public class OVChipkaart {
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
     @Column(name = "kaart_nummer")
-    private Long kaartNummer;
+    private int kaartNummer;
 
 //    @Temporal(TemporalType.DATE)
     @Column(name = "geldig_tot")
@@ -36,7 +36,7 @@ public class OVChipkaart {
 
     public OVChipkaart() {}
 
-    public OVChipkaart(Long kn, Date gt, int kl, double sl, int ri) {
+    public OVChipkaart(int kn, Date gt, int kl, double sl, int ri) {
         this.kaartNummer = kn;
         this.geldigTot = gt;
         this.klasse = kl;
@@ -44,7 +44,7 @@ public class OVChipkaart {
         this.reizigerId = ri;
     }
 
-    public OVChipkaart(Long kn, Date gt, int kl, double sl, int ri, List<Product> pr) {
+    public OVChipkaart(int kn, Date gt, int kl, double sl, int ri, List<Product> pr) {
         this.kaartNummer = kn;
         this.geldigTot = gt;
         this.klasse = kl;
@@ -53,11 +53,11 @@ public class OVChipkaart {
         this.producten = pr;
     }
 
-    public Long getKaartNummer() {
+    public int getKaartNummer() {
         return kaartNummer;
     }
 
-    public void setKaartNummer(Long kaartNummer) {
+    public void setKaartNummer(int kaartNummer) {
         this.kaartNummer = kaartNummer;
     }
 

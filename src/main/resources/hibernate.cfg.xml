@@ -23,10 +23,10 @@
 
 <!--        .. (eventuele andere configuratie)-->
 
-        <mapping class="nl.hu.dp.ovchip.domein.Adres"></mapping>
-        <mapping class="nl.hu.dp.ovchip.domein.OVChipkaart"></mapping>
-        <mapping class="nl.hu.dp.ovchip.domein.Product"></mapping>
-        <mapping class="nl.hu.dp.ovchip.domein.Reiziger"></mapping>
+        <mapping class="nl.hu.dp.ovchip.domain.Adres"></mapping>
+        <mapping class="nl.hu.dp.ovchip.domain.OVChipkaart"></mapping>
+        <mapping class="nl.hu.dp.ovchip.domain.Product"></mapping>
+        <mapping class="nl.hu.dp.ovchip.domain.Reiziger"></mapping>
 
     </session-factory>
 </hibernate-configuration>

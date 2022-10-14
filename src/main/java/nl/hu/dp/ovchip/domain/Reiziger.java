@@ -1,4 +1,4 @@
-package nl.hu.dp.ovchip.domein;
+package nl.hu.dp.ovchip.domain;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -12,10 +12,8 @@ import java.util.List;
 public class Reiziger {
 
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment", strategy = "increment")
     @Column(name = "reiziger_id")
-    private Long id;
+    private int id;
 
     @Column
     private String voorletters;
@@ -27,13 +25,13 @@ public class Reiziger {
     @JoinColumn(name = "reiziger_id")
     private Adres adres;
 
-    @OneToMany
-    @JoinColumn(name = "reiziger_id")
+    @OneToMany(mappedBy = "reizigerId", targetEntity = OVChipkaart.class)
+//    @JoinColumn(name = "reiziger_id")
     private List<OVChipkaart> ovchipkaarten = new ArrayList<>();
 
     public Reiziger() {}
 
-    public Reiziger(Long id, String vl, String tv, String an, Date gb) {
+    public Reiziger(int id, String vl, String tv, String an, Date gb) {
         this.id = id;
         this.voorletters = vl;
         this.tussenvoegsel = tv;
@@ -42,11 +40,11 @@ public class Reiziger {
         this.adres = null;
     }
 
-    public Long getId() {
+    public int getId() {
         return this.id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -92,6 +90,6 @@ public class Reiziger {
 
     @Override
     public String toString() {
-        return "Reiziger: {id: \"" + this.id + "\"; voorletters: \"" + this.voorletters + "\"; tussenvoegsel: \"" + this.tussenvoegsel + "\"; achternaam: \"" + this.achternaam + "\"; geboortedatum: \"" + this.geboortedatum + "\"; adres: \"" + this.adres + "\"" + "ovchipkaarten: " + ovchipkaarten + ";}";
+        return "Reiziger: {id: \"" + this.id + "\"; voorletters: \"" + this.voorletters + "\"; tussenvoegsel: \"" + this.tussenvoegsel + "\"; achternaam: \"" + this.achternaam + "\"; geboortedatum: \"" + this.geboortedatum + "\"; adres: \"" + this.adres + "\"" + "; ovchipkaarten: " + ovchipkaarten + ";}";
     }
 }

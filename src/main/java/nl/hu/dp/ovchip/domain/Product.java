@@ -1,6 +1,5 @@
-package nl.hu.dp.ovchip.domein;
+package nl.hu.dp.ovchip.domain;
 
-import org.hibernate.annotations.Columns;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
